@@ -41,8 +41,9 @@ h4 {
     .h4();
 }
 
+// Variables
 @logo-width: 100px;
-@header-height: 4.8em;
+@header-height: 5.8em;
 @header-height-s: 3em;
 
 // Breakpoints
@@ -50,7 +51,6 @@ h4 {
 @max-width-s: 715px;
 
 // Styles
-
 .body {
     box-sizing: border-box;
     color: @black;
@@ -67,6 +67,20 @@ h4 {
     @media(max-width: @max-width-s) {
         height: @header-height-s;
     }
+    
+    &.menu-open {
+        background-color: @gold;
+        
+        @media(max-width: @max-width-s) {
+            height: @header-height;
+        }
+
+        .header__menu {
+            transform: translate(0, 0);
+            background: @gold;
+            opacity: 1;
+        }
+    }    
 
     &--opaque {
         background-color: @gold;
@@ -94,19 +108,27 @@ h4 {
         }
     }
 
+    &__nav {
+        @media(max-width: @max-width-s) {
+            height: 0;
+        }
+    }
+
     &__menu {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
+        transition: all .28s ease 0s;
 
         @media(max-width: @max-width-s) {
             display: block;
             // height: 0;
             opacity: 0;
+            transform: translate(0, -16em);
             border-bottom: solid 1px @gold-dark;
             padding-left: 1em;
-            margin-top: @header-height;
+            margin-top: @header-height - 1em;
         }
 
         &--open {
@@ -145,10 +167,10 @@ h4 {
         position: relative;
         float: left;
         left: 50%;
-        transform: translate(-50%, -55px);
+        transform: translate(-50%, -63px);
     
         @media(max-width: @max-width-s) {
-            transform: translate(-50%, -252px);
+            transform: translate(-50%, -70px);
         }
     }
 }
@@ -166,65 +188,82 @@ h4 {
         color: @white;
         
         .article {
-            width: 600px;
+            position: relative;
+            top: 50%;
+            transform: translate(0, -50%);
+            max-width: 600px;
             margin: 0 auto;
+        }
+    }
+
+    &__blurb {
+        .article {
+            &__picture {
+                width: 50vw;
+            }
+
+            &__content {
+                width: 50vw;
+            }
         }
     }
 }
 
 .article {
-    position: relative;
-    top: 50%;
-    transform: translate(0, -50%);
+    display: flex;
     text-align: inherit;
 }
 
 // Buttons
-
 .button {
     .h4();
     color: @white;
     background: @gold;
+    box-sizing: border-box;
     border: solid @gold 1px;
     border-radius: 3em;
     padding: 1.1em 4em;
     margin: 2.5em;
     box-shadow: 0 1px 4px 2px @shadow-mid;
     transition: all .28s ease 0s;
-        // color .28s ease 0s,
-        // background .28s ease 0s,
-        // box-shadow .28s ease 0s;
 
     &--alt {
         color: @gold;
         background: @white;
         border: solid inherit 1px;
     }
+    
+    &:hover {
+        color: @white;
+        background: @gold-dark;
+        border: solid @gold-dark 1px;
+        box-shadow: 0 1px 2px 1px @shadow-dark;
+    }
 
     &--dropdown {
+        display: none;
         position: fixed;
-        opacity: 0;
+        background: none;
         padding: 1em;
         margin: .5em;
 
+        &:hover {
+            color: @black;
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
+        
         i {
             padding-left: 2px;
         }
         
         @media(max-width: @max-width-s) {
+            display: inline-block;
             transform: translate(0, -78px);
-            opacity: 1;
             border: none;
             box-shadow: none;
         }
-    }
-        
-    &:hover {
-        color: @white;
-        background: @gold-dark;
-        border: solid @gold-dark 1px;
-        // filter: brightness(.95);
-        box-shadow: 0 1px 2px 1px @shadow-dark;
     }
 
     &--alt-bw {
@@ -235,6 +274,7 @@ h4 {
         &:hover {
             color: @black;
             background: @white;
+            border: none;
             box-shadow: 0 1px 2px 1px @shadow-dark;
         }
     }
