@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'Neuwelt-Light';
+  src: url('../assets/fonts/ff-neuwelt/FF.Neuwelt/Neuwelt-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('../assets/fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+}
+h1 {
+  font-family: 'Neuwelt-Light', sans-serif;
+  font-size: 2.5em;
+  font-weight: 800;
+  line-height: 1.1em;
+}
+h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.6em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 2em;
+}
+.body {
+  box-sizing: border-box;
+  color: #000000;
+}
+.header {
+  position: fixed;
+  height: 4.8em;
+  width: 100%;
+  z-index: 1;
+  color: #FFFFFF;
+  transition: all 0.28s ease 0s;
+}
+.header--opaque {
+  background-color: #D4B254;
+  border-bottom: solid 1px #C19F41;
+}
+.header--opaque .header__inner {
+  border: none;
+}
+.header__inner {
+  width: 70vw;
+  margin: 0 auto;
+  border-bottom: solid 1px rgba(225, 225, 225, 0.5);
+  transition: border-bottom 0.28s ease 0s;
+}
+.header__menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__menu .menu__item {
+  text-transform: uppercase;
+}
+.header__menu .menu__item--logo-placeholder {
+  opacity: 0;
+  width: 100px;
+}
+.header__menu .menu__button {
+  padding: 0.8em 2em;
+  margin: 2.1em 0 2.1em 2.1em;
+}
+.header__logo {
+  position: relative;
+  float: left;
+  left: 50%;
+  transform: translate(-50%, -55px);
+}
+.main {
+  position: absolute;
+  width: 100%;
+}
+.main__splash {
+  height: 100vh;
+  background-image: url('../assets/images/main.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+.main__splash .article {
+  width: 600px;
+  margin: 0 auto;
+}
+.article {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: inherit;
+}
+.button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.6em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 2em;
+  color: #FFFFFF;
+  background: #D4B254;
+  border: solid #D4B254 1px;
+  border-radius: 3em;
+  padding: 1.1em 4em;
+  margin: 2.5em;
+  box-shadow: 0 1px 4px 2px #22222210;
+  transition: all 0.28s ease 0s;
+}
+.button--alt {
+  color: #D4B254;
+  background: #FFFFFF;
+  border: solid inherit 1px;
+}
+.button:hover {
+  color: #FFFFFF;
+  background: #C19F41;
+  border: solid #C19F41 1px;
+  box-shadow: 0 1px 2px 1px #22222222;
+}
+.button--alt-bw {
+  color: #FFFFFF;
+  background: none;
+  border: solid #FFFFFF 1px;
+}
+.button--alt-bw:hover {
+  color: #000000;
+  background: #FFFFFF;
+  box-shadow: 0 1px 2px 1px #22222222;
+}
