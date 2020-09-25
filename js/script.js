@@ -2,7 +2,7 @@
 let header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
-    window.pageYOffset > 150 ? header.classList.add('header--opaque') : header.classList.remove('header--opaque')
+    window.pageYOffset > 50 ? header.classList.add('header--opaque') : header.classList.remove('header--opaque')
 });
 
 // Menu toggle
